@@ -23,7 +23,12 @@ int size(node *root)
 	if(root==NULL)
 		return 0;
 	else
-		return(size(root->left)+1+size(root->right));
+	{
+		int lsize = size(root->left);
+		int rsize = size(root->right);
+		return (lsize+rsize+1);
+		//return(size(root->left)+1+size(root->right));
+	}
 }
 
 int main()
